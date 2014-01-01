@@ -1,0 +1,9 @@
+MacAdrList.txt
+[MACアドレス 名前]
+ex:12:34:56:67:89:ab hoge
+
+UserTwitterList.txt
+[名前 twitterID]
+ex:hoge hogegegegePC
+
+注:@はつけなくて良い
