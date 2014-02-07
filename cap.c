@@ -37,8 +37,6 @@ void search_loop(int *loop_count){
     	}
     }
     
-    //make_html();
-    
     /*
      //デバッグ用ログ
      printf("loop %d end  ",++*loop_count);
