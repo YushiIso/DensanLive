@@ -21,7 +21,7 @@ void make_html(){
             if(strcmp(user_name,twitter_name)==0){
                 fscanf(user_twitter_list,"%s",twitter_name);
                 if(strcmp("none",twitter_name)!=0)
-                    fprintf(user_html,"<div id='line' style=' color: #fdffff;margin-top;2px;margin-bottom: 2px; font-size:20px;'>\n%s<a href='https://twitter.com/intent/tweet?screen_name=%s' class='twitter-mention-button' data-lang='ja' data-size='' data-related='%s' data-hashtags='DensanLive '>Tweet to @%s</a>\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>\n</div>\n",user_name,twitter_name,twitter_name,twitter_name);
+                    fprintf(user_html,"<div id='line' style=' background:  #009b84; color: #fdffff;margin-top;2px;margin-bottom: 2px; font-size:20px;'>\n%s<a href='https://twitter.com/intent/tweet?screen_name=%s' class='twitter-mention-button' data-lang='ja' data-size='' data-related='%s' data-hashtags='DensanLive '>Tweet to @%s</a>\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>\n</div>\n",user_name,twitter_name,twitter_name,twitter_name);
                 else fprintf(user_html,"<div id='line' style='background:  #009b84; color: #fdffff;margin-top;2px;margin-bottom: 2px;'>\n%s\n</div>\n",user_name);
                 flag++;
                 break;

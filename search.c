@@ -118,6 +118,39 @@ void note_adr(char *adr){
     
 }
 
+//ユーザーのソート
+void sort_user(){
+	FILE *user;
+	int user_number=0;
+	char user_name_buf[64][64];
+	char *user_hash[64];
+	char *temp;
+	int i,j,cmp;
+    
+	user = fopen("user.txt","r");
+	while(fscanf(user,"%s",user_name_buf[user_number])!=EOF){
+		user_hash[user_number] = user_name_buf[user_number];
+		user_number++;
+	}
+	fclose(user);
+    
+	for(i=0;i<user_number;i++){
+		for(j=i+1;j<user_number;j++){
+			cmp = strcmp(user_hash[i],user_hash[j]);
+			if(cmp > 0){
+				temp = user_hash[i];
+				user_hash[i] = user_hash[j];
+				user_hash[j] = temp;
+			}
+		}
+	}
+	user = fopen("user.txt","w");
+	for(i=0;i<user_number;i++)
+		fprintf(user,"%s\n",user_hash[i]);
+	fclose(user);
+}	
+
+
 //ユーザーの照合
 void user_search(){
     FILE *get_mac_adr,*mac_adr_list,*user_list;
@@ -157,6 +190,8 @@ void user_search(){
     fclose(get_mac_adr);
     fclose(mac_adr_list);
     fclose(user_list);
+    
+    sort_user();
 }
 
 
